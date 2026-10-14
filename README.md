@@ -3,7 +3,7 @@
 Personal portfolio of **Shadab Ansari**, M.Tech (Computer Science & IT) at MANUU, Hyderabad.
 Machine Learning · Explainable AI · MLOps.
 
-Live site: https://shadabdln.github.io/ *(update after deploying)*
+Live site: https://shadabdln.github.io/
 
 ## Tech
 
