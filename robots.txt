@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shadabdln.github.io/sitemap.xml

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadab Ansari | Machine Learning &amp; Data Science</title>
+  <meta name="description" content="Shadab Ansari, M.Tech (CS &amp; IT) at MANUU Hyderabad. Machine learning, explainable AI and MLOps. Built an explainable 5-year colorectal cancer survival model on 257,827 SEER patients (ROC-AUC 0.877)." />
+  <meta name="author" content="Shadab Ansari" />
+  <meta name="keywords" content="Shadab Ansari, Machine Learning, Data Science, Explainable AI, SHAP, MLOps, Python, Portfolio, MANUU" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Social preview (WhatsApp / LinkedIn). Change the URL if your site link is different. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shadab Ansari | Machine Learning &amp; Data Science" />
+  <meta property="og:description" content="Explainable, reproducible machine learning: from raw data to a deployed app." />
+  <meta property="og:image" content="https://shadabdln.github.io/assets/img/og-image.png" />
+  <meta property="og:url" content="https://shadabdln.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://shadabdln.github.io/" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Apply the saved theme before the page paints (no flash) -->
+  <script>
+    (function () {
+      try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shadab Ansari",
+    "jobTitle": "Machine Learning & Data Science",
+    "image": "https://shadabdln.github.io/assets/img/profile.jpg",
+    "email": "mailto:shadabahamed63@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+    "alumniOf": "Maulana Azad National Urdu University",
+    "sameAs": [
+      "https://github.com/shadabdln",
+      "https://www.linkedin.com/in/shadab-ansari-dln/",
+      "https://shadabdln.medium.com/",
+      "https://x.com/ShadabChirps"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Reusable SVG icons and the SA logo (used with <use href="#...">) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="sa-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#8b5cf6"/><stop offset="1" stop-color="#06b6d4"/>
+      </linearGradient>
+    </defs>
+    <symbol id="logo" viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="18" fill="url(#sa-grad)"/>
+      <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M26.5 20h-7a6 6 0 0 0 0 12h1.5a6 6 0 0 1 0 12H11.5"/>
+        <path d="M30.5 44 38.5 20.5 46.5 44" stroke-linejoin="miter"/>
+        <path d="M34 35.5h9"/>
+      </g>
+      <circle cx="53.5" cy="42" r="3.4" fill="#67e8f9"/>
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></symbol>
+    <symbol id="i-medium" viewBox="0 0 24 24"><path fill="currentColor" d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  </svg>
+
+  <!-- Loading screen (disappears as soon as the page loads) -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__logo"><use href="#logo"/></svg>
+  </div>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" aria-label="Shadab Ansari, home">
+        <svg class="brand__logo"><use href="#logo"/></svg>
+        <span class="brand__text">Shadab<span>Ansari</span></span>
+      </a>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Main">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#research" class="nav__link">Research</a>
+        <a href="#education" class="nav__link">Education</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="assets/resume/Shadab_Ansari_Resume.pdf" class="btn btn--primary btn--sm nav__cta" download>
+          <svg><use href="#i-down"/></svg> Resume
+        </a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch light / dark theme">
+          <svg class="icon-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>
+        </button>
+        <button class="icon-btn nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span><span class="blob blob--2"></span><span class="blob blob--3"></span>
+        <span class="grid-lines"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="status reveal"><span class="status__dot"></span> Open to Data Science &amp; ML roles</p>
+
+          <h1 class="hero__title reveal">
+            <span class="hero__hello">Hello, I'm</span>
+            <span class="gradient-text">Shadab Ansari</span>
+          </h1>
+
+          <p class="hero__role reveal">
+            <span class="typed-wrap"><span id="typed">Machine Learning Engineer</span><span class="caret" aria-hidden="true"></span></span>
+          </p>
+
+          <p class="hero__lead reveal">
+            I build <strong>explainable, reproducible machine learning systems</strong>, from raw data to a deployed app.
+            M.Tech (CS &amp; IT) at MANUU, Hyderabad, researching cancer survival prediction on large clinical registry data.
+          </p>
+
+          <div class="hero__cta reveal">
+            <a href="#projects" class="btn btn--primary btn--lg">View my work <svg><use href="#i-arrow"/></svg></a>
+            <a href="assets/resume/Shadab_Ansari_Resume.pdf" class="btn btn--ghost btn--lg" download><svg><use href="#i-down"/></svg> Download CV</a>
+          </div>
+
+          <ul class="socials reveal" aria-label="Social links">
+            <li><a href="https://github.com/shadabdln" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub"><svg><use href="#i-github"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/shadab-ansari-dln/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://shadabdln.medium.com/" target="_blank" rel="noopener" aria-label="Medium" data-tip="Medium"><svg><use href="#i-medium"/></svg></a></li>
+            <li><a href="https://x.com/ShadabChirps" target="_blank" rel="noopener" aria-label="X (Twitter)" data-tip="X"><svg><use href="#i-x"/></svg></a></li>
+            <li><a href="mailto:shadabahamed63@gmail.com" aria-label="Email" data-tip="Email"><svg><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="portrait">
+            <div class="portrait__ring" aria-hidden="true"></div>
+            <div class="portrait__frame">
+              <!-- To change the photo, replace assets/img/profile.jpg (portrait, about 4:5) -->
+              <img src="assets/img/profile.jpg" alt="Portrait of Shadab Ansari" width="800" height="1000" fetchpriority="high" />
+            </div>
+            <div class="float-chip float-chip--1"><span>🎓</span> M.Tech @ MANUU</div>
+            <div class="float-chip float-chip--2"><span>🔍</span> Explainable AI</div>
+            <div class="float-chip float-chip--3"><span>⚙️</span> MLOps</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About"><span></span></a>
+    </section>
+
+    <!-- Tech marquee -->
+    <div class="marquee" aria-label="Technologies I use">
+      <div class="marquee__track">
+        <span>Python</span><span>scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>SHAP</span><span>LIME</span><span>lifelines</span><span>scikit-survival</span><span>Pandas</span><span>NumPy</span><span>SQL</span><span>MLflow</span><span>DVC</span><span>Docker</span><span>Kubernetes</span><span>Flask</span><span>GitHub Actions</span><span>Plotly</span>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker"><span class="kicker__num">01</span><span class="kicker__label">About me</span></span>
+          <h2 class="section__title">Turning data into decisions <span class="gradient-text">people can trust</span></h2>
+        </header>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <p>
+              I'm an <strong>M.Tech (Computer Science &amp; IT)</strong> student at Maulana Azad National Urdu University (MANUU), Hyderabad.
+              My research applies machine learning to <strong>colorectal cancer survival prediction</strong> under the guidance of Dr. Mohd Omar.
+            </p>
+            <p>
+              I care about models that are not only accurate but also <strong>explainable</strong> (so a clinician can see why a prediction was made),
+              <strong>validated</strong> on data they have never seen, and <strong>reproducible</strong> end to end: versioned data, tracked experiments,
+              tests, CI and containerised deployment.
+            </p>
+            <p>
+              Before moving into ML I built frontend projects with HTML, CSS and JavaScript, so I'm comfortable shipping the last mile too:
+              turning a model into a web app that people can actually use.
+            </p>
+            <p class="about__fun">☕ Coffee enthusiast &nbsp;·&nbsp; 🌳 Nature lover &nbsp;·&nbsp; 🎵 Music keeps me focused</p>
+          </div>
+
+          <aside class="card glow facts reveal" aria-label="Quick facts">
+            <h3 class="facts__title">Quick facts</h3>
+            <ul class="facts__list">
+              <li><span class="facts__icon"><svg><use href="#i-pin"/></svg></span><div><small>Location</small><strong>Hyderabad, India</strong></div></li>
+              <li><span class="facts__icon">🎓</span><div><small>Education</small><strong>M.Tech CS &amp; IT, MANUU</strong></div></li>
+              <li><span class="facts__icon">🎯</span><div><small>Focus</small><strong>ML · Explainable AI · MLOps</strong></div></li>
+              <li><span class="facts__icon">📚</span><div><small>Learning</small><strong>Deep learning &amp; neural networks</strong></div></li>
+              <li><span class="facts__icon">💼</span><div><small>Looking for</small><strong>Data Scientist · ML Engineer · AI/ML research</strong></div></li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--block">Let's talk <svg><use href="#i-arrow"/></svg></a>
+          </aside>
+        </div>
+
+        <div class="services">
+          <article class="card glow service reveal">
+            <div class="service__icon">🤖</div>
+            <h3>Machine learning models</h3>
+            <p>From cohort building and feature engineering to benchmarking, tuning and calibrating models on large, messy, real-world data.</p>
+          </article>
+          <article class="card glow service reveal">
+            <div class="service__icon">🔍</div>
+            <h3>Explainable AI</h3>
+            <p>SHAP, LIME and partial dependence to show why a model made each prediction, so people can check it and trust it.</p>
+          </article>
+          <article class="card glow service reveal">
+            <div class="service__icon">🚀</div>
+            <h3>MLOps &amp; deployment</h3>
+            <p>DVC pipelines, MLflow tracking, CI with GitHub Actions, and Flask apps in Docker and Kubernetes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker"><span class="kicker__num">02</span><span class="kicker__label">Skills</span></span>
+          <h2 class="section__title">My <span class="gradient-text">tech stack</span></h2>
+          <p class="section__sub">Tools I've used in real projects, grouped by where they fit in the ML lifecycle.</p>
+        </header>
+
+        <div class="skills">
+          <article class="card glow skill reveal">
+            <div class="skill__head"><span class="skill__icon">🐍</span><h3>Languages &amp; Data</h3></div>
+            <ul class="chips"><li>Python</li><li>SQL</li><li>MySQL</li><li>NumPy</li><li>Pandas</li><li>Jupyter</li><li>EDA</li></ul>
+          </article>
+          <article class="card glow skill reveal">
+            <div class="skill__head"><span class="skill__icon">🤖</span><h3>Machine Learning</h3></div>
+            <ul class="chips"><li>scikit-learn</li><li>XGBoost</li><li>LightGBM</li><li>Gradient Boosting</li><li>Random Forest</li><li>SVM</li><li>Optuna</li><li>Cross-validation</li><li>Calibration</li><li>Imbalanced data</li></ul>
+          </article>
+          <article class="card glow skill reveal">
+            <div class="skill__head"><span class="skill__icon">🔍</span><h3>Explainable AI</h3></div>
+            <ul class="chips"><li>SHAP</li><li>LIME</li><li>Partial dependence</li><li>Permutation importance</li></ul>
+          </article>
+          <article class="card glow skill reveal">
+            <div class="skill__head"><span class="skill__icon">📈</span><h3>Survival Analysis &amp; Stats</h3></div>
+            <ul class="chips"><li>lifelines</li><li>scikit-survival</li><li>Cox PH</li><li>Random Survival Forest</li><li>Kaplan-Meier</li><li>C-index</li><li>Bootstrap CIs</li><li>Decision curves</li><li>SciPy</li></ul>
+          </article>
+          <article class="card glow skill reveal">
+            <div class="skill__head"><span class="skill__icon">⚙️</span><h3>MLOps &amp; Deployment</h3></div>
+            <ul class="chips"><li>MLflow</li><li>DVC</li><li>DagsHub</li><li>pytest</li><li>GitHub Actions</li><li>Docker</li><li>Kubernetes</li><li>Flask</li><li>Gunicorn</li><li>REST API</li></ul>
+          </article>
+          <article class="card glow skill reveal">
+            <div class="skill__head"><span class="skill__icon">🎨</span><h3>Visualization, Web &amp; Tools</h3></div>
+            <ul class="chips"><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li><li>Git</li><li>GitHub</li><li>VS Code</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker"><span class="kicker__num">03</span><span class="kicker__label">Projects</span></span>
+          <h2 class="section__title">Featured <span class="gradient-text">work</span></h2>
+        </header>
+
+        <!-- Featured project (main research) -->
+        <article class="feature card reveal">
+          <div class="feature__head">
+            <div>
+              <span class="badge">★ M.Tech Research</span>
+              <h3 class="feature__title">Explainable ML for 5-Year Colorectal Cancer Survival Prediction</h3>
+              <p class="feature__lead">
+                An end-to-end, reproducible ML pipeline that predicts five-year overall survival for colorectal cancer patients
+                and explains each prediction. Trained on the SEER 17 cancer registry and externally validated on AACR Project GENIE.
+              </p>
+            </div>
+            <a href="https://github.com/shadabdln/crc-seer-survival" class="btn btn--primary" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> View code</a>
+          </div>
+
+          <div class="metrics">
+            <div class="metric"><span class="metric__value">257,827</span><span class="metric__label">patients, SEER 17 registries</span></div>
+            <div class="metric"><span class="metric__value">0.877</span><span class="metric__label">test ROC-AUC (95% CI 0.874–0.880) on 50,338 held-out patients</span></div>
+            <div class="metric"><span class="metric__value">0.878</span><span class="metric__label">temporal validation AUC (train 2010–15, test 2016–18)</span></div>
+            <div class="metric"><span class="metric__value">0.790</span><span class="metric__label">external validation AUC, AACR Project GENIE</span></div>
+            <div class="metric"><span class="metric__value">0.809</span><span class="metric__label">best C-index across 5 survival models</span></div>
+            <div class="metric"><span class="metric__value">+0.042</span><span class="metric__label">AUC over the stage + age + sex clinical baseline (0.835)</span></div>
+          </div>
+
+          <div class="feature__body">
+            <div>
+              <h4>What I did</h4>
+              <ul class="ticks">
+                <li>Built the cohort from <strong>324,174</strong> registry records (cleaning, exclusions, feature engineering) down to <strong>257,827</strong> patients.</li>
+                <li>Benchmarked <strong>6 classifiers</strong> (Logistic Regression, SVM, Random Forest, Gradient Boosting, XGBoost, LightGBM) with stratified 5-fold CV and 1,000-sample bootstrap confidence intervals.</li>
+                <li>Checked <strong>calibration</strong> (slope 1.02), decision curves and subgroup performance, not just AUC.</li>
+                <li>Compared <strong>5 survival models</strong>: Cox PH, CoxNet, Random Survival Forest, Gradient Boosting Survival, XGBoost-Cox.</li>
+                <li>Explained predictions globally and per patient with <strong>SHAP</strong>, LIME and partial dependence plots.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>How it ships</h4>
+              <ol class="pipeline">
+                <li><span>DVC</span>prepare → train → evaluate pipeline with params.yaml</li>
+                <li><span>MLflow</span>experiment tracking and Model Registry on DagsHub</li>
+                <li><span>CI</span>GitHub Actions: pytest on synthetic data, no-patient-data guard, Docker build</li>
+                <li><span>Docker</span>Flask + Gunicorn app with /predict and /health, Kubernetes manifests</li>
+                <li><span>App</span>calibrated 5-year survival probability + top SHAP factors per patient</li>
+              </ol>
+            </div>
+          </div>
+
+          <h4 class="gallery__title">Figures from the study <small>click to enlarge</small></h4>
+          <div class="gallery">
+            <button class="gallery__item" type="button" data-full="assets/img/projects/study-design.jpg" data-caption="Study design: SEER 17 development cohort, internal validation, GENIE external cohort and the MLOps layer.">
+              <img src="assets/img/projects/study-design.jpg" alt="Study design flowchart" loading="lazy" width="1600" height="1186" /><span>Study design</span>
+            </button>
+            <button class="gallery__item" type="button" data-full="assets/img/projects/roc-pr.jpg" data-caption="ROC and precision-recall curves on the held-out SEER test set.">
+              <img src="assets/img/projects/roc-pr.jpg" alt="ROC and precision-recall curves" loading="lazy" width="1600" height="685" /><span>ROC &amp; PR curves</span>
+            </button>
+            <button class="gallery__item" type="button" data-full="assets/img/projects/calibration-dca.jpg" data-caption="Calibration and decision-curve analysis.">
+              <img src="assets/img/projects/calibration-dca.jpg" alt="Calibration and decision curves" loading="lazy" width="1600" height="633" /><span>Calibration &amp; DCA</span>
+            </button>
+            <button class="gallery__item" type="button" data-full="assets/img/projects/shap.jpg" data-caption="SHAP summary and agreement of four feature-importance methods.">
+              <img src="assets/img/projects/shap.jpg" alt="SHAP feature importance" loading="lazy" width="1600" height="844" /><span>SHAP explainability</span>
+            </button>
+            <button class="gallery__item" type="button" data-full="assets/img/projects/robustness.jpg" data-caption="Robustness: temporal validation, feature-set sensitivity and subgroup performance.">
+              <img src="assets/img/projects/robustness.jpg" alt="Robustness and subgroup analysis" loading="lazy" width="1600" height="709" /><span>Robustness &amp; subgroups</span>
+            </button>
+            <button class="gallery__item" type="button" data-full="assets/img/projects/genie-validation.jpg" data-caption="External validation of the frozen model on AACR Project GENIE BPC CRC.">
+              <img src="assets/img/projects/genie-validation.jpg" alt="GENIE external validation" loading="lazy" width="1600" height="1198" /><span>External validation</span>
+            </button>
+          </div>
+
+          <ul class="chips chips--tech">
+            <li>Python</li><li>scikit-learn</li><li>XGBoost</li><li>LightGBM</li><li>SHAP</li><li>lifelines</li><li>scikit-survival</li><li>MLflow</li><li>DVC</li><li>Flask</li><li>Docker</li><li>Kubernetes</li><li>GitHub Actions</li>
+          </ul>
+        </article>
+
+        <!-- More projects: the cards are created from assets/js/projects.js.
+             To add a new project, open that file and copy one block. No HTML change needed. -->
+        <div class="more-head reveal">
+          <h3 class="subhead">More projects</h3>
+          <div class="filters" id="projectFilters" role="tablist" aria-label="Filter projects"></div>
+        </div>
+        <div class="projects" id="projectGrid"></div>
+        <noscript><p>Enable JavaScript to see more projects, or visit <a href="https://github.com/shadabdln">github.com/shadabdln</a>.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH ================= -->
+    <section class="section section--alt" id="research">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker"><span class="kicker__num">04</span><span class="kicker__label">Research</span></span>
+          <h2 class="section__title">Research &amp; <span class="gradient-text">writing</span></h2>
+        </header>
+
+        <div class="research">
+          <article class="card glow pub reveal">
+            <span class="badge badge--soft">📄 Manuscript · prepared for submission</span>
+            <h3>Explainable, Calibrated and Externally Validated Machine Learning for Five-Year Colorectal Cancer Survival</h3>
+            <p class="pub__authors"><strong>S. Ansari</strong>, M. Omar</p>
+            <p class="pub__venue">Prepared for submission to ICCIDSDT-2027 (Springer LNNS). An extended journal version with GENIE external validation is in preparation.</p>
+          </article>
+
+          <article class="card glow pub pub--blog reveal">
+            <span class="badge badge--soft">✍️ Blog</span>
+            <h3>Writing on Medium</h3>
+            <p>I write about machine learning, model explainability and what I learn along the way.</p>
+            <a href="https://shadabdln.medium.com/" class="btn btn--ghost" target="_blank" rel="noopener">Read on Medium <svg><use href="#i-out"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="section" id="education">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="kicker"><span class="kicker__num">05</span><span class="kicker__label">Journey</span></span>
+          <h2 class="section__title">Education &amp; <span class="gradient-text">achievements</span></h2>
+        </header>
+
+        <div class="edu">
+          <ol class="timeline">
+            <li class="timeline__item reveal">
+              <span class="timeline__date">Pursuing · 2nd year</span>
+              <h3>M.Tech, Computer Science &amp; Information Technology</h3>
+              <p class="timeline__org">Maulana Azad National Urdu University (MANUU), Hyderabad</p>
+              <p>Research: explainable machine learning for colorectal cancer survival prediction. Guide: Dr. Mohd Omar.</p>
+            </li>
+            <li class="timeline__item reveal">
+              <span class="timeline__date">2022 – 2024</span>
+              <h3>Master of Computer Applications (MCA)</h3>
+              <p class="timeline__org">Maulana Azad National Urdu University (MANUU), Hyderabad</p>
+              <p>CGPA 8.4 / 10</p>
+            </li>
+          </ol>
+
+          <div class="achievements">
+            <article class="card glow ach reveal"><span class="ach__icon">🥉</span><div><h4>3rd Rank</h4><p>Coding Ninjas Coding Byte Contest</p></div></article>
+            <article class="card glow ach reveal"><span class="ach__icon">🎭</span><div><h4>Coordinator of Cultural Activities</h4><p>MANUU</p></div></article>
+            <article class="card glow ach reveal"><span class="ach__icon">🤝</span><div><h4>Member, Food-cum-Audit Committee</h4><p>Boys' Hostel, MANUU (2023–24)</p></div></article>
+            <article class="card glow ach reveal"><span class="ach__icon">📜</span><div><h4>7-Day Bootcamp Certificate</h4><p>Dev Town with Microsoft Learn and GDSC KIIT</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <header class="section__head section__head--center reveal">
+          <span class="kicker"><span class="kicker__num">06</span><span class="kicker__label">Contact</span></span>
+          <h2 class="section__title">Let's build something <span class="gradient-text">together</span></h2>
+          <p class="section__sub">I'm looking for Data Scientist, Machine Learning Engineer and AI/ML research roles. My inbox is always open.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__info reveal">
+            <a class="contact__row card" href="mailto:shadabahamed63@gmail.com">
+              <span class="contact__icon"><svg><use href="#i-mail"/></svg></span>
+              <span><small>Email</small>shadabahamed63@gmail.com</span>
+            </a>
+            <a class="contact__row card" href="https://www.linkedin.com/in/shadab-ansari-dln/" target="_blank" rel="noopener">
+              <span class="contact__icon"><svg><use href="#i-linkedin"/></svg></span>
+              <span><small>LinkedIn</small>in/shadab-ansari-dln</span>
+            </a>
+            <a class="contact__row card" href="https://github.com/shadabdln" target="_blank" rel="noopener">
+              <span class="contact__icon"><svg><use href="#i-github"/></svg></span>
+              <span><small>GitHub</small>github.com/shadabdln</span>
+            </a>
+            <div class="contact__row card">
+              <span class="contact__icon"><svg><use href="#i-pin"/></svg></span>
+              <span><small>Location</small>Hyderabad, Telangana, India</span>
+            </div>
+          </div>
+
+
+          <form class="card form reveal" id="contactForm" action="https://formspree.io/f/xvkzwndv" method="POST" novalidate>
+            <div class="form__grid">
+              <div class="field">
+                <input id="name" name="name" type="text" autocomplete="name" placeholder=" " required />
+                <label for="name">Your name</label>
+              </div>
+              <div class="field">
+                <input id="email" name="email" type="email" autocomplete="email" placeholder=" " required />
+                <label for="email">Your email</label>
+              </div>
+            </div>
+            <div class="field">
+              <input id="subject" name="subject" type="text" placeholder=" " />
+              <label for="subject">Subject (optional)</label>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Your message</label>
+            </div>
+            <!-- Spam trap for bots (hidden from people) -->
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button class="btn btn--primary btn--block btn--lg" type="submit" id="formBtn">
+              <span class="btn__label">Send message</span> <svg><use href="#i-arrow"/></svg>
+            </button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer__glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__cta reveal">
+        <div>
+          <h2>Have a role or project in mind?</h2>
+          <p>Let's talk about how I can help your team turn data into decisions.</p>
+        </div>
+        <a href="mailto:shadabahamed63@gmail.com" class="btn btn--light btn--lg"><svg><use href="#i-mail"/></svg> Say hello</a>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#home" class="brand" aria-label="Shadab Ansari, back to top">
+            <svg class="brand__logo"><use href="#logo"/></svg>
+            <span class="brand__text">Shadab<span>Ansari</span></span>
+          </a>
+          <p>Machine Learning · Explainable AI · MLOps. Building models that are accurate, explainable and ready to ship.</p>
+          <p class="status status--sm"><span class="status__dot"></span> Available for opportunities</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Footer">
+          <h3>Navigate</h3>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer__col">
+          <h3>Connect</h3>
+          <a href="https://github.com/shadabdln" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/shadab-ansari-dln/" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg> LinkedIn</a>
+          <a href="https://shadabdln.medium.com/" target="_blank" rel="noopener"><svg><use href="#i-medium"/></svg> Medium</a>
+          <a href="https://x.com/ShadabChirps" target="_blank" rel="noopener"><svg><use href="#i-x"/></svg> X (Twitter)</a>
+        </div>
+
+        <div class="footer__col">
+          <h3>Get in touch</h3>
+          <a href="mailto:shadabahamed63@gmail.com"><svg><use href="#i-mail"/></svg> shadabahamed63@gmail.com</a>
+          <span><svg><use href="#i-pin"/></svg> Hyderabad, India</span>
+          <a href="assets/resume/Shadab_Ansari_Resume.pdf" download><svg><use href="#i-down"/></svg> Download resume</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Shadab Ansari. All rights reserved.</p>
+        <p>Designed &amp; built with <span class="heart">♥</span> in Hyderabad</p>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">SHADAB</div>
+  </footer>
+
+  <!-- Floating back-to-top button -->
+  <a href="#home" class="to-top" id="toTop" aria-label="Back to top"><svg><use href="#i-up"/></svg></a>
+
+  <!-- Figure lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Figure preview">
+    <button class="lightbox__close" type="button" aria-label="Close">×</button>
+    <img src="" alt="" id="lightboxImg" />
+    <p id="lightboxCaption"></p>
+  </dialog>
+
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
