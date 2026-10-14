@@ -35,13 +35,10 @@ Plain **HTML, CSS and JavaScript**: no framework, no build step, no dependencies
 │   │   └── projects/           ← project figures
 │   └── resume/Shadab_Ansari_Resume.pdf
 ├── robots.txt, sitemap.xml, site.webmanifest, .nojekyll
-└── DEPLOY_STEPS.md             ← how to run and deploy (Hinglish)
 ```
 
 ## Run locally
 
 Open the folder in VS Code, install the **Live Server** extension, right-click `index.html` → **Open with Live Server**.
 
-## Deploy
 
-See [DEPLOY_STEPS.md](DEPLOY_STEPS.md).
